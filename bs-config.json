@@ -1,5 +1,16 @@
 {
   "port": 3000,
-  "files": ["./*.{html}", "./app/**/*.{ts,html,htm,css,js}"],
-  "server": { "baseDir": "./" }
+  "files": [
+    "./*.{html}",
+    "./build/**/*.{ts,html,htm,css,js}",
+    "./build/app/**/*.{ts,html,htm,css,js}",
+    "./app/**/*.{ts,html,htm,css,js}"
+  ],
+  "server": {
+    "baseDir": [
+      "./",
+      "build"
+    ],
+    "directory": true
+  }
 }

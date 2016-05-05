@@ -4,10 +4,17 @@
   "description": "Angular Component Router ng-conf workshop",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\"",
+    "start2": "tsc && concurrently \"tsc -w\" \"npm run copy\" \"lite-server\"",
+    "copy": "cp -vrp app/* build/app/",
+    "serve": "lite-server -c bs-config.json",
+    "clean": "rm -rfv build/app/*",
     "postinstall": "npm run typings",
     "typings": "typings install"
   },
-  "keywords": ["angular", "router"],
+  "keywords": [
+    "angular",
+    "router"
+  ],
   "author": "Brandon Roberts",
   "license": "ISC",
   "dependencies": {
@@ -29,6 +36,6 @@
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
-    "typings":"^0.7.12"
+    "typings": "^0.7.12"
   }
 }
